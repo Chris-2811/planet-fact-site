@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Facts Site | Frontendmentor</title>
+  </head>
+  <body class="venus">
+    <header class="primary-header flex">
+      <div class="logo ff-heading fs-800 uppercase">The planets</div>
+      <button
+        class="mobile-nav-toggle"
+        id="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </button>
+      <nav
+        class="primary-navigation flex"
+        data-visible="false"
+        id="primary-navigation"
+      >
+        <ul role="list" class="flex nav-list">
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="index.html">mercury</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="active fw-bold ff-body uppercase">
+            <div></div>
+            <a href="venus.html">venus</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="earth.html">earth</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="mars.html">mars</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="jupiter.html">jupiter</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="saturn.html">saturn</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="uranus.html">uranus</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="neptune.html">neptune</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="grid-container grid-container--top grid">
+        <img
+          class="img planet-img"
+          id="overview-img"
+          src="assets/planet-venus.svg"
+          alt="mercury"
+        />
+        <img
+          class="img planet-img"
+          id="structure-img"
+          src="assets/planet-venus-internal.svg"
+          alt="mercury"
+          hidden
+        />
+        <div class="img geology-img" id="geology-img" hidden>
+          <img src="assets/planet-venus.svg" alt="" />
+          <img class="blooper" src="assets/geology-venus.png" alt="mercury" />
+        </div>
+
+        <!-- Overview Tab -->
+        <article class="planet-info" role="tabpanel" id="overview-tab">
+          <h1 class="ff-heading fs-900 uppercase">Venus</h1>
+          <p>
+            Venus is the second planet from the Sun. It is named after the Roman
+            goddess of love and beauty. As the brightest natural object in
+            Earth's night sky after the Moon, Venus can cast shadows and can be,
+            on rare occasions, visible to the naked eye in broad daylight.
+          </p>
+          <div class="wikipedia">
+            <span>Source:</span>
+            <a href="#"> Wikipedia</a>
+            <img src="assets/icon-source.svg" alt="source" />
+          </div>
+        </article>
+
+        <!-- Structure Panel -->
+        <article class="planet-info" role="tabpanel" id="structure-tab" hidden>
+          <h1 class="ff-heading fs-900 uppercase">venus</h1>
+          <p>
+            The similarity in size and density between Venus and Earth suggests
+            they share a similar internal structure: a core, mantle, and crust.
+            Like that of Earth, Venusian core is most likely at least partially
+            liquid because the two planets have been cooling at about the same
+            rate.
+          </p>
+          <div class="wikipedia">
+            <span>Source:</span>
+            <a href="#"> Wikipedia</a>
+            <img src="assets/icon-source.svg" alt="source" />
+          </div>
+        </article>
+
+        <!-- Geology Panel -->
+        <article class="planet-info" role="tabpanel" id="geology-tab" hidden>
+          <h1 class="ff-heading fs-900 uppercase">venus</h1>
+          <p>
+            Much of the Venusian surface appears to have been shaped by volcanic
+            activity. Venus has several times as many volcanoes as Earth, and it
+            has 167 large volcanoes that are over 100 km (60 mi) across. The
+            only volcanic complex of this size on Earth is the Big Island of
+            Hawaii.
+          </p>
+          <div class="wikipedia">
+            <span>Source:</span>
+            <a href="#"> Wikipedia</a>
+            <img src="assets/icon-source.svg" alt="source" />
+          </div>
+        </article>
+
+        <!-- Tabs -->
+        <div class="tablist" role="tablist">
+          <button
+            aria-selected="true"
+            aria-controls="overview-tab"
+            data-img="overview-img"
+            role="tab"
+            class="fs-500 ff-body ls-500 uppercase"
+          >
+            <span>01</span>Overview
+          </button>
+          <button
+            aria-selected="false"
+            aria-controls="structure-tab"
+            data-img="structure-img"
+            role="tab"
+            class="fs-500 ff-body ls-500 uppercase"
+          >
+            <span>02</span><span>Internal</span> structure
+          </button>
+          <button
+            aria-selected="false"
+            aria-controls="geology-tab"
+            role="tab"
+            data-img="geology-img"
+            class="fs-400 ff-body ls-500 uppercase"
+          >
+            <span>03</span>surface <span>geology</span>
+          </button>
+        </div>
+
+        <div class="planet-meta grid">
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              rotation time
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">243 days</h2>
+          </div>
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              revolution time
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">224.7 days</h2>
+          </div>
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              radius
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">6,051.8 km</h2>
+          </div>
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              average temp.
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">471°c</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/tabs.js"></script>
+  </body>
+</html>

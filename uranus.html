@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Facts Site | Frontendmentor</title>
+  </head>
+  <body class="uranus">
+    <header class="primary-header flex">
+      <div class="logo ff-heading fs-800 uppercase">The planets</div>
+      <button
+        class="mobile-nav-toggle"
+        id="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </button>
+      <nav
+        class="primary-navigation flex"
+        data-visible="false"
+        id="primary-navigation"
+      >
+        <ul role="list" class="flex nav-list">
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="index.html">mercury</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="venus.html">venus</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="earth.html">earth</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="mars.html">mars</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="jupiter.html">jupiter</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="saturn.html">saturn</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="active fw-bold ff-body uppercase">
+            <div></div>
+            <a href="uranus.html">uranus</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="neptune.html">neptune</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="grid-container grid-container--top grid">
+        <img
+          class="img planet-img"
+          id="overview-img"
+          src="assets/planet-uranus.svg"
+          alt="mercury"
+        />
+        <img
+          class="img planet-img"
+          id="structure-img"
+          src="assets/planet-uranus-internal.svg"
+          alt="mercury"
+          hidden
+        />
+        <div class="img geology-img" id="geology-img" hidden>
+          <img src="assets/planet-uranus.svg" alt="" />
+          <img class="blooper" src="assets/geology-uranus.png" alt="uranus" />
+        </div>
+
+        <!-- Overview Tab -->
+        <article class="planet-info" role="tabpanel" id="overview-tab">
+          <h1 class="ff-heading fs-900 uppercase">Uranus</h1>
+          <p>
+            Uranus is the seventh planet from the Sun. Its name is a reference
+            to the Greek god of the sky, Uranus according to Greek mythology,
+            was the great-grandfather of Ares. It has the third-largest
+            planetary radius and fourth-largest planetary mass in the Solar
+            System.
+          </p>
+          <div class="wikipedia">
+            <span>Source:</span>
+            <a href="https://en.wikipedia.org/wiki/Uranus" target="_blank">
+              Wikipedia</a
+            >
+            <img src="assets/icon-source.svg" alt="source" />
+          </div>
+        </article>
+
+        <!-- Structure Panel -->
+        <article class="planet-info" role="tabpanel" id="structure-tab" hidden>
+          <h1 class="ff-heading fs-900 uppercase">uranus</h1>
+          <p>
+            The standard model of Uranus's structure is that it consists of
+            three layers: a rocky (silicate/iron–nickel) core in the centre, an
+            icy mantle in the middle and an outer gaseous hydrogen/helium
+            envelope. The core is relatively small, with a mass of only 0.55
+            Earth masses.
+          </p>
+          <div class="wikipedia">
+            <span>Source:</span>
+            <a href="https://en.wikipedia.org/wiki/Uranus" target="_blank">
+              Wikipedia</a
+            >
+            <img src="assets/icon-source.svg" alt="source" />
+          </div>
+        </article>
+
+        <!-- Geology Panel -->
+        <article class="planet-info" role="tabpanel" id="geology-tab" hidden>
+          <h1 class="ff-heading fs-900 uppercase">uranus</h1>
+          <p>
+            The composition of Uranus's atmosphere is different from its bulk,
+            consisting mainly of molecular hydrogen and helium. The helium molar
+            fraction, i.e. the number of helium atoms per molecule of gas, is
+            0.15±0.03 in the upper troposphere.
+          </p>
+          <div class="wikipedia">
+            <span>Source:</span>
+            <a href="https://en.wikipedia.org/wiki/Uranus" target="_blank">
+              Wikipedia</a
+            >
+            <img src="assets/icon-source.svg" alt="source" />
+          </div>
+        </article>
+
+        <!-- Tabs -->
+        <div class="tablist" role="tablist">
+          <button
+            aria-selected="true"
+            aria-controls="overview-tab"
+            data-img="overview-img"
+            role="tab"
+            class="fs-500 ff-body ls-500 uppercase"
+          >
+            <span>01</span>Overview
+          </button>
+          <button
+            aria-selected="false"
+            aria-controls="structure-tab"
+            data-img="structure-img"
+            role="tab"
+            class="fs-500 ff-body ls-500 uppercase"
+          >
+            <span>02</span><span>Internal</span> structure
+          </button>
+          <button
+            aria-selected="false"
+            aria-controls="geology-tab"
+            role="tab"
+            data-img="geology-img"
+            class="fs-400 ff-body ls-500 uppercase"
+          >
+            <span>03</span>surface <span>geology</span>
+          </button>
+        </div>
+
+        <div class="planet-meta grid">
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              rotation time
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">17.2 hours</h2>
+          </div>
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              revolution time
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">84 years</h2>
+          </div>
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              radius
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">25,362 km</h2>
+          </div>
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              average temp.
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">-195°c</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/tabs.js"></script>
+  </body>
+</html>

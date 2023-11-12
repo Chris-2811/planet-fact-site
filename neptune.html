@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Facts Site | Frontendmentor</title>
+  </head>
+  <body class="neptune">
+    <header class="primary-header flex">
+      <div class="logo ff-heading fs-800 uppercase">The planets</div>
+      <button
+        class="mobile-nav-toggle"
+        id="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </button>
+      <nav
+        class="primary-navigation flex"
+        data-visible="false"
+        id="primary-navigation"
+      >
+        <ul role="list" class="flex nav-list">
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="index.html">mercury</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="venus.html">venus</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="earth.html">earth</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="mars.html">mars</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="jupiter.html">jupiter</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="saturn.html">saturn</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="fw-bold ff-body uppercase">
+            <div></div>
+            <a href="uranus.html">uranus</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+          <li class="active fw-bold ff-body uppercase">
+            <div></div>
+            <a href="neptune.html">neptune</a>
+            <img src="assets/icon-chevron.svg" alt="chevron" />
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="grid-container grid-container--top grid">
+        <img
+          class="img planet-img"
+          id="overview-img"
+          src="assets/planet-neptune.svg"
+          alt="mercury"
+        />
+        <img
+          class="img planet-img"
+          id="structure-img"
+          src="assets/planet-neptune-internal.svg"
+          alt="mercury"
+          hidden
+        />
+        <div class="img geology-img" id="geology-img" hidden>
+          <img src="assets/planet-neptune.svg" alt="" />
+          <img class="blooper" src="assets/geology-neptune.png" alt="neptune" />
+        </div>
+
+        <!-- Overview Tab -->
+        <article class="planet-info" role="tabpanel" id="overview-tab">
+          <h1 class="ff-heading fs-900 uppercase">neptune</h1>
+          <p>
+            Neptune is the eighth and farthest-known Solar planet from the Sun.
+            In the Solar System, it is the fourth-largest planet by diameter,
+            the third-most-massive planet, and the densest giant planet. It is
+            17 times the mass of Earth, more massive than its near-twin Uranus.
+          </p>
+          <div class="wikipedia">
+            <span>Source:</span>
+            <a href="https://en.wikipedia.org/wiki/Neptune" target="_blank">
+              Wikipedia</a
+            >
+            <img src="assets/icon-source.svg" alt="source" />
+          </div>
+        </article>
+
+        <!-- Structure Panel -->
+        <article class="planet-info" role="tabpanel" id="structure-tab" hidden>
+          <h1 class="ff-heading fs-900 uppercase">neptune</h1>
+          <p>
+            Neptune's internal structure resembles that of Uranus. Its
+            atmosphere forms about 5% to 10% of its mass and extends perhaps 10%
+            to 20% of the way towards the core. Increasing concentrations of
+            methane, ammonia and water are found in the lower regions.
+          </p>
+          <div class="wikipedia">
+            <span>Source:</span>
+            <a href="https://en.wikipedia.org/wiki/Neptune" target="_blank">
+              Wikipedia</a
+            >
+            <img src="assets/icon-source.svg" alt="source" />
+          </div>
+        </article>
+
+        <!-- Geology Panel -->
+        <article class="planet-info" role="tabpanel" id="geology-tab" hidden>
+          <h1 class="ff-heading fs-900 uppercase">neptune</h1>
+          <p>
+            Neptune's atmosphere is 80% hydrogen and 19% helium. A trace amount
+            of methane is also present. Prominent absorption bands of methane
+            exist at wavelengths above 600 nm, in the red and infrared portion
+            of the spectrum.
+          </p>
+          <div class="wikipedia">
+            <span>Source:</span>
+            <a href="https://en.wikipedia.org/wiki/Neptune" target="_blank">
+              Wikipedia</a
+            >
+            <img src="assets/icon-source.svg" alt="source" />
+          </div>
+        </article>
+
+        <!-- Tabs -->
+        <div class="tablist" role="tablist">
+          <button
+            aria-selected="true"
+            aria-controls="overview-tab"
+            data-img="overview-img"
+            role="tab"
+            class="fs-500 ff-body ls-500 uppercase"
+          >
+            <span>01</span>Overview
+          </button>
+          <button
+            aria-selected="false"
+            aria-controls="structure-tab"
+            data-img="structure-img"
+            role="tab"
+            class="fs-500 ff-body ls-500 uppercase"
+          >
+            <span>02</span><span>Internal</span> structure
+          </button>
+          <button
+            aria-selected="false"
+            aria-controls="geology-tab"
+            role="tab"
+            data-img="geology-img"
+            class="fs-400 ff-body ls-500 uppercase"
+          >
+            <span>03</span>surface <span>geology</span>
+          </button>
+        </div>
+
+        <div class="planet-meta grid">
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              rotation time
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">16.08 hours</h2>
+          </div>
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              revolution time
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">164.79 years</h2>
+          </div>
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              radius
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">24,622 km</h2>
+          </div>
+          <div class="flow-small">
+            <p
+              class="ff-primary fs-300 fw-bold text-white-opacity-50 uppercase"
+            >
+              average temp.
+            </p>
+            <h2 class="ff-heading fs-700 ls-100 uppercase">-201°c</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/tabs.js"></script>
+  </body>
+</html>

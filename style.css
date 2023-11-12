@@ -1,0 +1,982 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan:wght@400;500;700&display=swap');
+
+/* --------------------- */
+/* Custom Properties */
+/* --------------------- */
+
+:root {
+  /* colors */
+  --clr-primary-100: 0, 0%, 100%;
+  --clr-primary-200: hsl(240 6% 54%);
+  --clr-primary-300: hsl(240 17% 26%);
+  --clr-primary-400: hsl(240 67% 0%);
+
+  --clr-mercury: hsl(194 48% 49%);
+  --clr-venus: hsl(33 82% 61%);
+  --clr-earth: hsl(263 67% 51%);
+  --clr-mars: hsl(10 63% 51%);
+  --clr-jupiter: hsl(2 68% 53%);
+  --clr-saturn: hsl(17 73% 46%);
+  --clr-uranus: hsl(169 73% 44%);
+  --clr-neptune: hsl(222 87% 56%);
+
+  /* font-size */
+  --fs-900: 2.5rem;
+  --fs-800: 1.75rem;
+  --fs-700: 1.25rem;
+  --fs-600: 0.75rem;
+  --fs-500: 0.6875;
+  --fs-400: 0.5625;
+  --fs-300: 0.5rem;
+
+  /* font-weight */
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  /* font-family */
+  --ff-primary: 'League Spartan', sans-serif;
+  --ff-secondary: 'Antonio', sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-secondary);
+
+  /* letter spacing */
+  --ls-100: -1.05px;
+  --ls-200: -0.75px;
+  --ls-300: 0.727px;
+  --ls-400: 1.364px;
+  --ls-500: 1.929px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    /* font-size */
+    --fs-900: 2.5rem;
+    --fs-700: 1.5rem;
+    --fs-400: 0.6875;
+
+    /* letter spacing */
+    --ls-100: -1.05px;
+    --ls-200: -0.9x;
+  }
+}
+@media (min-width: 1020px) {
+  :root {
+    /* font-size */
+    --fs-900: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 0.875rem;
+    --fs-500: 0.875rem;
+    --fs-300: 0.6875rem;
+
+    /* letter spacing */
+    --ls-100: -1.05px;
+    --ls-200: -0.9x;
+    --ls-300: 1px;
+    --ls-500: 2.57px;
+  }
+}
+
+/* ------------------------ */
+/* Reset */
+/* ------------------------ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img:not(.planet-img),
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------ */
+/* Utility Classes */
+/* ------------------------ */
+
+/* general */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.flow-small {
+  --flow-space: 0.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* colors */
+
+.bg-primary-200 {
+  background-color: var(--clr-primary-200);
+}
+
+.bg-primary-300 {
+  background-color: var(--clr-primary-300);
+}
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+
+.bg-mercury {
+  background-color: var(--clr-mercury);
+}
+
+.bg-venus {
+  background-color: var(--clr-venus);
+}
+
+.bg-earth {
+  background-color: var(--clr-earth);
+}
+
+.bg-mars {
+  background-color: var(--clr-mars);
+}
+
+.bg-jupiter {
+  background-color: var(--clr-jupiter);
+}
+
+.bg-saturn {
+  background-color: var(--clr-saturn);
+}
+
+.bg-uranus {
+  background-color: var(--clr-uranus);
+}
+
+.bg-neptune {
+  background-color: var(--clr-neptune);
+}
+
+.text-white {
+  color: var(--clr-primary-100);
+}
+
+.text-white-opacity-50 {
+  color: hsl(var(--clr-primary-100), 0.5);
+}
+
+body.mercury {
+  --selected-color: var(--clr-mercury);
+  --selected-width: var();
+}
+body.venus {
+  --selected-color: var(--clr-venus);
+}
+body.earth {
+  --selected-color: var(--clr-earth);
+}
+body.mars {
+  --selected-color: var(--clr-mars);
+}
+body.jupiter {
+  --selected-color: var(--clr-jupiter);
+}
+body.saturn {
+  --selected-color: var(--clr-saturn);
+}
+body.uranus {
+  --selected-color: var(--clr-uranus);
+}
+body.neptune {
+  --selected-color: var(--clr-neptune);
+}
+
+/* typography */
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.ff-primary {
+  font-family: var(--ff-primary);
+}
+
+.ff-secondary {
+  font-family: var(--ff-secondary);
+}
+
+.ff-body {
+  font-family: var(--ff-body);
+}
+
+.ff-heading {
+  font-family: var(--ff-heading);
+}
+
+.ls-100 {
+  letter-spacing: var(--ls-100);
+}
+
+.ls-200 {
+  letter-spacing: var(--ls-200);
+}
+
+.ls-300 {
+  letter-spacing: var(--ls-300);
+}
+
+.ls-400 {
+  letter-spacing: var(--ls-400);
+}
+
+.ls-500 {
+  letter-spacing: var(--ls-500);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* ----------------------- */
+/* General Styling */
+/* ----------------------- */
+
+body {
+  background: #070724;
+  background-image: url(assets/background-stars.svg);
+  background-size: cover;
+  color: white;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
+/* ----------------- */
+/* Components */
+/* ----------------- */
+
+@media (max-width: 768px) {
+  .tablist {
+    order: -1;
+    padding-inline: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid hsl(var(--clr-primary-100), 0.5);
+  }
+
+  .tablist > * {
+    border: 0;
+    background-color: transparent;
+    color: hsl(var(--clr-primary-100), 0.5);
+    padding-block: 1.25rem 1rem;
+    border-bottom: 4px solid transparent;
+  }
+
+  .tablist > * span {
+    display: none;
+  }
+
+  .tablist > *[aria-selected='true'] {
+    color: hsl(var(--clr-primary-100));
+  }
+}
+
+@media (min-width: 768px) {
+  .tablist {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .tablist > *[aria-selected='true'] {
+    color: hsl(var(--clr-primary-100));
+    border-bottom: 4px solid var(--clr-mercury);
+  }
+
+  .tablist > * {
+    background-color: transparent;
+    color: hsl(var(--clr-primary-100));
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .tablist > *:hover {
+    background-color: var(--clr-primary-300);
+    border-color: var(--clr-primary-300);
+  }
+
+  .tablist > *[aria-selected='true'] {
+    background-color: var(--selected-color);
+    border-color: var(--selected-color);
+  }
+}
+
+/* primary header */
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid hsl(var(--clr-primary-100), 0.4);
+}
+
+.primary-navigation {
+  background: #070724;
+  display: none;
+  position: fixed;
+  padding: 3rem 1.5rem 0 1.5rem;
+  width: 100%;
+  inset: 4.6875rem 0 4rem 0;
+  z-index: 100;
+}
+
+.primary-navigation[data-visible='true'] {
+  display: block;
+}
+
+.nav-list {
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.nav-list li {
+  padding-block: 1.125rem;
+  position: relative;
+}
+
+.nav-list li > a {
+  color: hsl(var(--clr-primary-100), 0.75);
+}
+
+.nav-list li > a:hover {
+  color: hsl(var(--clr-primary-100));
+}
+
+.nav-list img {
+  position: absolute;
+  right: 0;
+  width: 0.5rem;
+}
+
+.nav-list li > div {
+  background-color: var(--clr-mercury);
+  height: 1.125rem;
+  width: 1.125rem;
+  border-radius: 100%;
+  margin-right: 1.5rem;
+}
+
+.nav-list li:nth-child(2) > div {
+  background-color: var(--clr-venus);
+}
+.nav-list li:nth-child(3) > div {
+  background-color: var(--clr-earth);
+}
+.nav-list li:nth-child(4) > div {
+  background-color: var(--clr-mars);
+}
+.nav-list li:nth-child(5) > div {
+  background-color: var(--clr-jupiter);
+}
+.nav-list li:nth-child(6) > div {
+  background-color: var(--clr-saturn);
+}
+.nav-list li:nth-child(7) > div {
+  background-color: var(--clr-uranus);
+}
+.nav-list li:nth-child(8) > div {
+  background-color: var(--clr-neptune);
+}
+
+.nav-list li {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-toggle {
+  position: absolute;
+  right: 1.5rem;
+  border: none;
+  width: 1.5rem;
+  height: 1.05rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.mobile-nav-toggle div {
+  position: absolute;
+  display: block;
+  height: 0.22rem;
+  width: 1.5rem;
+  background: hsl(var(--clr-primary-100));
+  transform: rotate(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.one {
+  top: 0;
+}
+
+.two {
+  top: 6px;
+}
+
+.three {
+  top: 12px;
+}
+
+.mobile-nav-toggle[aria-expanded='true'] .one {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.mobile-nav-toggle[aria-expanded='true'] .two {
+  opacity: 0;
+}
+
+.mobile-nav-toggle[aria-expanded='true'] .three {
+  top: 6px;
+  transform: rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+  .tablist > * {
+    border: 1px solid hsl(var(--clr-primary-100), 0.5);
+    padding-block: 0.6875rem;
+  }
+
+  .tablist > * span:first-child {
+    margin-right: 1em;
+  }
+
+  .primary-navigation {
+    width: fit-content;
+    padding: 0;
+  }
+
+  .primary-header {
+    flex-direction: column;
+    padding-bottom: 0;
+    gap: 2.5rem;
+  }
+
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  .primary-navigation {
+    position: static;
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .nav-list li {
+    padding-block: 0 1.7rem;
+  }
+
+  .nav-list li > div,
+  .nav-list li > img {
+    display: none;
+  }
+
+  .nav-list li.active a {
+    color: hsl(var(--clr-primary-100));
+  }
+}
+
+@media (min-width: 1020px) {
+  .primary-header {
+    flex-direction: row;
+    padding: 0 clamp(2.5rem, 3.5vw, 5rem) 0 clamp(2rem, 4vw, 6rem);
+  }
+
+  .nav-list li {
+    padding-block: 1.8rem;
+    border-top: 4px solid transparent;
+  }
+
+  .nav-list li.active {
+    border-top: 4px solid var(--selected-color);
+  }
+}
+
+/* --------------- */
+/* Layout */
+/* --------------- */
+
+.grid-container {
+  place-items: center;
+  text-align: center;
+  grid-template-rows: min-content clamp(304px, 70vw, 550px) min-content min-content;
+  gap: 0;
+}
+
+.grid-container .planet-info,
+.grid-container .planet-meta {
+  padding-inline: 1.5rem;
+}
+
+.planet-info p {
+  padding-block: 1rem 2rem;
+  max-width: 500px;
+}
+
+.grid-container img {
+  align-self: center;
+}
+
+.mercury .planet-img,
+.mercury .geology-img {
+  width: 25%;
+  min-width: 111px;
+  max-width: 184px;
+}
+
+.venus .planet-img,
+.venus .geology-img {
+  width: 37%;
+  min-width: 154px;
+  max-width: 253px;
+}
+
+.earth .planet-img,
+.earth .geology-img {
+  width: 45%;
+  min-width: 173px;
+  max-width: 285px;
+}
+
+.mars .planet-img,
+.mars .geology-img {
+  width: 28%;
+  min-width: 129px;
+  max-width: 213px;
+}
+
+.jupiter .planet-img,
+.jupiter .geology-img {
+  width: 50%;
+  min-width: 224px;
+  max-width: 369px;
+}
+
+.saturn .planet-img,
+.saturn .geology-img {
+  width: 60%;
+  min-width: 256px;
+  max-width: 422px;
+}
+
+.uranus .planet-img,
+.uranus .geology-img {
+  width: 42.5%;
+  min-width: 176px;
+  max-width: 290px;
+}
+
+.neptune .planet-img,
+.neptune .geology-img {
+  width: 41%;
+  min-width: 173px;
+  max-width: 285px;
+}
+
+.grid-container .wikipedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+}
+
+.grid-container .wikipedia a {
+  color: hsl(var(--clr-primary-100), 0.5);
+  text-decoration: underline;
+  margin: 0 0.5rem;
+  font-weight: bold;
+}
+
+.grid-container .wikipedia span {
+  color: hsl(var(--clr-primary-100), 0.5);
+}
+
+.geology-img {
+  position: relative;
+}
+
+.geology-img .blooper {
+  width: 40%;
+  max-width: 135px;
+  margin: 0 auto;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.venus .geology-img .blooper {
+  top: 70%;
+}
+.earth .geology-img .blooper {
+  top: 67.5%;
+}
+.mars .geology-img .blooper {
+  top: 76%;
+}
+.jupiter .geology-img .blooper {
+  top: 65%;
+}
+.saturn .geology-img .blooper {
+  top: 53%;
+}
+.uranus .geology-img .blooper {
+  top: 66%;
+}
+.neptune .geology-img .blooper {
+  top: 67.5%;
+}
+
+.planet-meta {
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 550px;
+}
+
+.planet-meta > * {
+  border: 1px solid hsl(var(--clr-primary-100), 0.5);
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    gap: 0;
+  }
+
+  .grid-container > *:not(.tablist) {
+    padding-inline: 0;
+  }
+
+  .grid-container {
+    grid-template-columns: minmax(2.5rem, 1fr) repeat(2, minmax(0, 500px)) minmax(
+        2.5rem,
+        1fr
+      );
+    grid-template-rows: 28.75rem min-content min-content;
+    grid-template-areas:
+      '. image image .'
+      '. content tabs .'
+      '. meta meta .';
+  }
+
+  .grid-container img,
+  .grid-container .img {
+    grid-area: image;
+  }
+
+  .planet-meta {
+    max-width: 100%;
+  }
+
+  .grid-container .planet-img:not(.wikipedia img) {
+    margin-top: 1rem;
+  }
+
+  .grid-container--top .planet-meta {
+    grid-area: meta;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 1.7rem;
+  }
+
+  .grid-container .planet-meta > * {
+    flex-direction: column;
+    align-items: start;
+    padding: 1rem 0 1.1875rem 0.9375rem;
+  }
+
+  .mercury .planet-img,
+  .mercury .geology-img {
+    align-self: center;
+  }
+
+  .geology-img {
+    margin-top: 1rem;
+  }
+
+  .grid-container--top .tablist {
+    grid-area: tabs;
+    width: clamp(280px, 35vw, 350px);
+    justify-self: end;
+  }
+
+  .grid-container--top .tablist > * {
+    padding-inline: 1.25rem;
+    text-align: left;
+  }
+
+  .grid-container--top .planet-info {
+    grid-area: content;
+    justify-self: start;
+    text-align: left;
+  }
+
+  .grid-container .wikipedia {
+    justify-content: start;
+  }
+
+  .grid-container .planet-info p {
+    padding: 0;
+    margin-block: 1.5rem 0;
+    max-width: 340px;
+    min-height: 160px;
+  }
+
+  .grid-container--bottom {
+    grid-template-columns: repeat(4, 1fr);
+    padding-inline: 2.5rem;
+    gap: 0.6rem;
+  }
+
+  .grid-container--bottom > * {
+    padding: 1rem 0 1.2rem 0.875rem;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .grid-container--bottom p {
+    margin-bottom: 0.25em;
+  }
+}
+
+@media (min-width: 1020px) {
+  .grid-container {
+    grid-template-columns: minmax(4rem, 1fr) repeat(2, minmax(0, 550px)) minmax(
+        4rem,
+        1fr
+      );
+    grid-template-rows: repeat(2, min-content) 1fr;
+
+    grid-template-areas:
+      '. image content .'
+      '. image tabs .'
+      '. meta meta .';
+    margin-top: 7.875rem;
+  }
+
+  .grid-container .planet-img:not(.wikipedia img) {
+    margin-top: 0;
+    transform: translateY(-2.75rem);
+  }
+
+  .mercury .planet-img,
+  .mercury .geology-img {
+    width: 55%;
+    max-width: 290px;
+  }
+
+  .venus .planet-img,
+  .venus .geology-img {
+    width: 72.5%;
+    max-width: 400px;
+  }
+
+  .earth .planet-img,
+  .earth .geology-img {
+    width: 80.5%;
+    max-width: 450px;
+  }
+  .mars .planet-img,
+  .mars .geology-img {
+    width: 58%;
+    max-width: 336px;
+  }
+  .jupiter .planet-img,
+  .jupiter .geology-img {
+    width: 100%;
+    max-width: 582px;
+  }
+  .saturn .planet-img,
+  .saturn .geology-img {
+    width: 100%;
+    max-width: 666px;
+  }
+
+  .uranus .planet-img,
+  .uranus .geology-img {
+    width: 80%;
+    max-width: 458px;
+  }
+
+  .neptune .planet-img,
+  .neptune .geology-img {
+    width: 83%;
+    max-width: 480px;
+  }
+
+  .neptune .geology-img > img:first-child {
+    width: 100%;
+  }
+
+  .geology-img {
+    margin-top: 0;
+    transform: translateY(-2.75rem);
+  }
+
+  .geology-img .blooper {
+    width: 50%;
+    max-width: 163px;
+  }
+
+  .grid-container .tablist {
+    margin-block: 2.5rem 5.5rem;
+  }
+
+  .grid-container .planet-info {
+    justify-self: end;
+    width: 350px;
+  }
+
+  .grid-container .planet-meta {
+    margin-top: 0;
+  }
+
+  .planet-meta > * {
+    padding: 1.25rem 0 1.6875rem 1.4375rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid-container {
+    grid-template-columns: minmax(4rem, 1fr) repeat(2, minmax(0, 582px)) minmax(
+        4rem,
+        1fr
+      );
+    grid-template-rows: repeat(2, min-content) 1fr;
+
+    grid-template-areas:
+      '. image content .'
+      '. image tabs .'
+      '. meta meta .';
+    margin-top: 7.875rem;
+  }
+}
