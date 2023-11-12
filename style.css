@@ -364,6 +364,11 @@ body {
   grid-template-rows: min-content 1fr;
 }
 
+.chevron {
+  z-index: 100;
+  cursor: pointer;
+}
+
 /* ----------------- */
 /* Components */
 /* ----------------- */
@@ -600,6 +605,10 @@ body {
   .nav-list li.active a {
     color: hsl(var(--clr-primary-100));
   }
+
+  .nav-list li > a img {
+    display: none;
+  }
 }
 
 @media (min-width: 1020px) {
@@ -802,7 +811,7 @@ body {
     margin-top: 1rem;
   }
 
-  .grid-container--top .planet-meta {
+  .grid-container .planet-meta {
     grid-area: meta;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 1.7rem;
@@ -823,18 +832,18 @@ body {
     margin-top: 1rem;
   }
 
-  .grid-container--top .tablist {
+  .grid-container .tablist {
     grid-area: tabs;
     width: clamp(280px, 35vw, 350px);
     justify-self: end;
   }
 
-  .grid-container--top .tablist > * {
+  .grid-container .tablist > * {
     padding-inline: 1.25rem;
     text-align: left;
   }
 
-  .grid-container--top .planet-info {
+  .grid-container .planet-info {
     grid-area: content;
     justify-self: start;
     text-align: left;
@@ -880,7 +889,7 @@ body {
       '. image content .'
       '. image tabs .'
       '. meta meta .';
-    margin-top: 7.875rem;
+    margin-top: clamp(7.875rem, 10.5vh, 10rem);
   }
 
   .grid-container .planet-img:not(.wikipedia img) {
@@ -977,6 +986,5 @@ body {
       '. image content .'
       '. image tabs .'
       '. meta meta .';
-    margin-top: 7.875rem;
   }
 }
